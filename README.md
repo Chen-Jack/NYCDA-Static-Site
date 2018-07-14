@@ -1,3 +1,4 @@
 # NYCDA-Static-Site
+Check it out
 
-A static site practicing CSS and HTML
+Chen-Jack.github.io

@@ -10,6 +10,10 @@ a:hover{
     background-color: #555;
 }
 
+figcaption{
+    text-align: center;
+}
+
 header{
     position: fixed;
     width: 100%;
@@ -47,6 +51,13 @@ body{
         flex: 1;
         order: 4;
     }
+
+    img{
+        border-bottom-style: solid;
+        border-color: black;
+        border-width: 1px;
+    }
+    
 }
 
 /*  Display desktop version otherwise*/
@@ -76,12 +87,20 @@ body{
         grid-column: 1/12;
         grid-row: 4;
     }
+
+    img{
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-color: black;
+        border-width: 1px;
+    }
 }
 
 .nav-bar{
     display: inline-flex;
-    height: 30px;
+    height: 40px;
     width: 100%;
+    align-items: center;
 }
 
 .nav-bar > * {
@@ -94,15 +113,8 @@ body{
 
 
 main{
-    padding-top: 30px;
+    padding-top: 40px; /* Padding for top nav bar */
     min-height: 100vh;
-}
-
-img{
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-
 }
 
 
@@ -126,5 +138,20 @@ footer{
     background-color: #222;
     color:  #fffddd;
     text-align: center;
+}
+
+@media screen and (min-width: 801px){
+    .photo-grid{
+        padding: 5px;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 33% 33% 33%;
+    }
+
+    .photo-grid * {
+        width: 100%;
+    }
+
 }
 

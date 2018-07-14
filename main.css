@@ -2,29 +2,56 @@
     margin: 0px;
     padding: 0px;
 }
-
-a:link {
-    text-decoration: none;
-}
-a:hover{
-    background-color: #555;
-}
-
-figcaption{
-    text-align: center;
-}
-
-header{
-    position: fixed;
-    width: 100%;
-}
-
 body{
     background-color: #fffddd;
 }
 
-/* Display mobile mode if iphone x size or smaller */
-@media screen and (max-width: 800px ){
+a:link {
+    text-decoration: none;
+}
+.header-button:hover, .footer-button:hover{
+    background-color: #555;
+}
+
+/*Header Styling*/
+header{
+    position: fixed;
+    width: 100%;
+}
+header:first-child :header:last-child{
+    border-left-style: dotted;
+    border-right-style: dotted;
+    border-color: #555;
+}
+.nav-bar{
+    display: inline-flex;
+    height: 40px;
+    width: 100%;
+    justify-content: center;
+}
+.nav-bar a {   /*Vertical centering of buttons */
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #222;
+    color: #fffddd;
+    height: 100%;
+}
+
+
+
+/* Main Styling */
+
+main{
+    padding-top: 40px; /* Padding for top nav bar */
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 800px ){ /* Display mobile mode if small enough */
     #layout-container{
         display: flex;
         flex-direction: column;
@@ -36,18 +63,19 @@ body{
         width: 100vw;
     }
     .grid-name{
-        padding: 5px;
+        padding: 10px;
         flex: 1;
         order: 2;
     }
     .grid-info{
-        padding: 5px;
+        padding: 10px;
+        margin: 10px;
         flex: 1;
         order: 3;
     }
 
     .grid-bio{
-        padding: 5px;
+        padding: 10px;
         flex: 1;
         order: 4;
     }
@@ -60,8 +88,8 @@ body{
     
 }
 
-/*  Display desktop version otherwise*/
-@media screen and (min-width: 801px){
+
+@media screen and (min-width: 801px){ /*  Display desktop version otherwise*/
     #layout-container{
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -75,15 +103,17 @@ body{
         width: 100%;
     }
     .grid-info{
+        padding: 10px;
         grid-column: 6/12;
         grid-row: 2;
     }
     .grid-name{
+        padding: 10px;
         grid-column: 6/12;
         grid-row: 1;
     }
     .grid-bio{
-        padding: 5px;
+        padding: 10px;
         grid-column: 1/12;
         grid-row: 4;
     }
@@ -96,33 +126,15 @@ body{
     }
 }
 
-.nav-bar{
-    display: inline-flex;
-    height: 40px;
-    width: 100%;
-    align-items: center;
-}
-
-.nav-bar > * {
-    background-color: #222;
-    color: #fffddd;
-    flex: 1;
-    height: 100%;
-    text-align: center;
-}
 
 
-main{
-    padding-top: 40px; /* Padding for top nav bar */
-    min-height: 100vh;
-}
-
-
-
+/* Footer styling */
 footer{
+    margin-top: 50px;
     background-color: #222;
     width: 100%;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .bottom-nav{
@@ -131,16 +143,40 @@ footer{
     flex-direction: column;
     height: 80%;
 }
-
+figcaption{
+    text-align: center;
+}
 .bottom-nav * {
-    padding-top: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     flex: 1;
     background-color: #222;
     color:  #fffddd;
     text-align: center;
 }
 
-@media screen and (min-width: 801px){
+
+
+
+/* Photo Layout Styling for Gallery */
+
+
+@media screen and (max-width: 800px){  /*Desktop Layout */
+    .photo-grid{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photo-grid * {
+        margin-top: 20px;
+        flex: 1;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 801px){  /*Desktop Layout */
     .photo-grid{
         padding: 5px;
         display: grid;
@@ -152,6 +188,5 @@ footer{
     .photo-grid * {
         width: 100%;
     }
-
 }
 

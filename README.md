@@ -1,4 +1,3 @@
 # NYCDA-Static-Site
-Check it out
 
-Chen-Jack.github.io
+<a href="Chen-Jack.github.io"> Check the site out here </a>
